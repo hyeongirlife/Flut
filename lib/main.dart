@@ -81,6 +81,66 @@ class App extends StatelessWidget {
                             textColor: Colors.white,
                           )
                         ]),
+                    const SizedBox(height: 100),
+                    const Row(
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Wallets",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 36,
+                              fontWeight: FontWeight.w600,
+                            )),
+                        Text("View All",
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 18,
+                            ))
+                      ],
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      // !! command + . => 전구
+                      child: const Padding(
+                        padding: EdgeInsets.all(30),
+                        child: Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Euro",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 32,
+                                    )),
+                                SizedBox(height: 10),
+                                Row(
+                                  children: [
+                                    Text("6 428",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                        )),
+                                    SizedBox(width: 5),
+                                    Text("EUR",
+                                        style: TextStyle(
+                                          color: Color.fromRGBO(
+                                              255, 255, 255, 0.8),
+                                          fontSize: 18,
+                                        ))
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ]))),
     );
   }
