@@ -1,3 +1,4 @@
+import 'package:flut/widgets/button.dart';
 import 'package:flutter/material.dart';
 
 class Player {
@@ -25,7 +26,7 @@ class App extends StatelessWidget {
           // appBar: AppBar(elevation: 99, centerTitle: true, title: Text()),
           backgroundColor: const Color(0XFF181818),
           body: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -66,20 +67,20 @@ class App extends StatelessWidget {
                           color: Colors.white.withOpacity(0.8),
                         )),
                     const SizedBox(height: 20),
-                    Row(children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            color: Colors.amber,
-                            borderRadius: BorderRadius.circular(45)),
-                        child: Padding(
-                            padding: EdgeInsets.symmetric(
-                                vertical: 15, horizontal: 50),
-                            child: const Text(
-                              "Transfter",
-                              style: TextStyle(fontSize: 20),
-                            )),
-                      )
-                    ]),
+                    const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Button(
+                            text: "Transfer",
+                            bgColor: Colors.amber,
+                            textColor: Colors.black,
+                          ),
+                          Button(
+                            text: "Request",
+                            bgColor: Color(0xFF1F2123),
+                            textColor: Colors.white,
+                          )
+                        ]),
                   ]))),
     );
   }
