@@ -1,4 +1,5 @@
 import 'package:flut/widgets/button.dart';
+import 'package:flut/widgets/card.dart';
 import 'package:flutter/material.dart';
 
 class Player {
@@ -31,7 +32,7 @@ class App extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(
-                      height: 100,
+                      height: 30,
                     ),
                     Row(mainAxisAlignment: MainAxisAlignment.end, children: [
                       // 수직정렬
@@ -52,7 +53,7 @@ class App extends StatelessWidget {
                       )
                     ]),
                     const SizedBox(
-                      height: 120,
+                      height: 20,
                     ),
                     Text("Total Balance",
                         style: TextStyle(
@@ -81,7 +82,7 @@ class App extends StatelessWidget {
                             textColor: Colors.white,
                           )
                         ]),
-                    const SizedBox(height: 100),
+                    const SizedBox(height: 50),
                     const Row(
                       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.end,
@@ -100,58 +101,27 @@ class App extends StatelessWidget {
                             ))
                       ],
                     ),
-                    Container(
-                      clipBehavior: Clip.hardEdge,
-                      decoration: BoxDecoration(
-                        color: Colors.grey.withOpacity(0.2),
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      // !! command + . => 전구
-                      child: Padding(
-                        padding: const EdgeInsets.all(30),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("Euro",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 32,
-                                    )),
-                                SizedBox(height: 10),
-                                Row(
-                                  children: [
-                                    Text("6 428",
-                                        style: TextStyle(
-                                          color: Color.fromRGBO(
-                                              255, 255, 255, 0.5),
-                                          fontSize: 20,
-                                        )),
-                                    SizedBox(width: 5),
-                                    Text("EUR",
-                                        style: TextStyle(
-                                          color: Color.fromRGBO(
-                                              255, 255, 255, 0.5),
-                                          fontSize: 18,
-                                        ))
-                                  ],
-                                ),
-                              ],
-                            ),
-                            Transform.scale(
-                              scale: 2.2,
-                              child: Transform.translate(
-                                offset: const Offset(-5, 11),
-                                child: const Icon(Icons.euro_rounded,
-                                    color: Colors.white, size: 98),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
+                    const CurrencyCard(
+                        name: "Euro",
+                        code: "EUR",
+                        amount: "6,428",
+                        icon: Icons.euro_rounded,
+                        isInverted: false,
+                        offset: 0),
+                    const CurrencyCard(
+                        name: "Bitcoin",
+                        code: "EUR",
+                        amount: "10,428",
+                        icon: Icons.currency_bitcoin_sharp,
+                        isInverted: true,
+                        offset: 2),
+                    const CurrencyCard(
+                        name: "Dollar",
+                        code: "USD",
+                        amount: "10,428",
+                        icon: Icons.attach_money_outlined,
+                        isInverted: false,
+                        offset: 4)
                   ]))),
     );
   }
